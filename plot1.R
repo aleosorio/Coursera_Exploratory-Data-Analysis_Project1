@@ -1,7 +1,6 @@
 # SETTING WORKING DIRECTORY
 setwd("C:/Users/lenovo/Documents/MAO/Aprendizaje/Data Science/Exploratory Data Analysis_Coursera/Assignment1")
 
-
 # READING RAW DATA FROM WORKING DIRECTORY IN PC
 ## Decimal character set to "."
 ## na.strings set to "?"
