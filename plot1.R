@@ -10,3 +10,13 @@ household_power_consumption <- read.csv2("~/MAO/Aprendizaje/Data Science/Explora
 
 ## SUBSETTING DATASET TO WORK WITH
 dataset <- subset(household_power_consumption, Date == "1/2/2007" | Date == "2/2/2007")
+
+## INITIALIZING HISTOGRAM WITH XLABEL AND MAIN TITLE
+hist(dataset$Global_active_power, xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
+        
+## ANNOTATING
+
+        ## Adding missing tick values to X axis
+        axis(side = 2, at = c(400, 800, 1200))
+        
+        
