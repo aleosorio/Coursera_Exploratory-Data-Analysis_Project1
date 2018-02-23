@@ -23,21 +23,21 @@ setwd("C:/Users/lenovo/Documents/MAO/Aprendizaje/Data Science/Exploratory Data A
         dataset$DateTime <- ymd_hms(dataset$DateTime)
 
 # SETTING UP GENERAL PARAMETERS
-par(mar = c(4,8,1,8), mfcol = c(2, 2))
-        
-        
+par(oma = c(0, 8, 0, 8), mar = c(4,4,1,1), mfcol = c(2, 2))
+cex <- 0.5
+
 # OPENING PNG DEVICE TO CREATE "PLOT4.PNG" IN WORKING DIR
-#png(filename = "plot4.png")
+png(filename = "plot4.png")
 
 # GENERATING PLOT 1
         ## X axis set to "n" (empty X axis)
         ## Sets x and y label texts
-        ## Sets label text to 0.8 size
+        ## Sets label text to "cex" size
         ## Sets type to "n" (empty plot)
-        with(dataset, plot(DateTime, Global_active_power, xaxt = "n", xlab = "", ylab = "Global Active Power (kilowatts)", cex.axis = 0.8, type = "n"))
+        with(dataset, plot(DateTime, Global_active_power, xaxt = "n", xlab = "", ylab = "Global Active Power (kilowatts)", cex.axis = cex, cex.lab = cex, type = "n"))
 
         # Drawing X axis with correct labels' text and size
-        with(dataset, axis(1, at = c(DateTime[1], DateTime[1440], DateTime[2880]), labels = c("Thu", "Fri", "Sat"), cex.axis = 0.8))
+        with(dataset, axis(1, at = c(DateTime[1], DateTime[1440], DateTime[2880]), labels = c("Thu", "Fri", "Sat"), cex.axis = cex))
 
         # Plotting line on empty plot
         with(dataset, lines(DateTime, Global_active_power))
@@ -45,20 +45,46 @@ par(mar = c(4,8,1,8), mfcol = c(2, 2))
 # GENERATING PLOT 2
         ## X axis set to "n" (empty X axis)
         ## Sets x and y label texts
-        ## Sets label text to 0.8 size
+        ## Sets label text to "cex" size
         ## Sets type to "n" (empty plot)
-        with(dataset, plot(DateTime, Sub_metering_1, xaxt = "n", xlab = "", ylab = "Energy sub metering", cex.axis = 0.8, type = "n"))
+        with(dataset, plot(DateTime, Sub_metering_1, xaxt = "n", xlab = "", ylab = "Energy sub metering", cex.axis = cex, cex.lab = cex, type = "n"))
 
         # Drawing X axis with correct labels' text and size
-        with(dataset, axis(1, at = c(DateTime[1], DateTime[1440], DateTime[2880]), labels = c("Thu", "Fri", "Sat"), cex.axis = 0.8))
+        with(dataset, axis(1, at = c(DateTime[1], DateTime[1440], DateTime[2880]), labels = c("Thu", "Fri", "Sat"), cex.axis = cex))
 
         # Plotting lines on empty plot
         with(dataset, lines(DateTime, Sub_metering_1))
         with(dataset, lines(DateTime, Sub_metering_2, col = "red"))
         with(dataset, lines(DateTime, Sub_metering_3, col = "blue"))
         
-        # Drawing legend
-        legend("topright", lty = c(1, 1, 1), cex = 0.8, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+        # Drawing legend with no border (bty set to "n")
+        legend("topright", bty = "n", lty = c(1, 1, 1), cex = cex, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
+# GENERATING PLOT 3
+        ## X axis set to "n" (empty X axis)
+        ## Sets x and y label texts
+        ## Sets label text to "cex" size
+        ## Sets type to "n" (empty plot)
+        with(dataset, plot(DateTime, Voltage, xaxt = "n", xlab = "datetime", ylab = "Voltage", cex.axis = cex, cex.lab = cex, type = "n"))
+        
+        # Drawing X axis with correct labels' text and size
+        with(dataset, axis(1, at = c(DateTime[1], DateTime[1440], DateTime[2880]), labels = c("Thu", "Fri", "Sat"), cex.axis = cex))
+        
+        # Plotting line on empty plot
+        with(dataset, lines(DateTime, Voltage))
+        
+# GENERATING PLOT 4
+        ## X axis set to "n" (empty X axis)
+        ## Sets x and y label texts
+        ## Sets label text to "cex" size
+        ## Sets type to "n" (empty plot)
+        with(dataset, plot(DateTime, Global_reactive_power, xaxt = "n", xlab = "datetime", ylab = "Global_reactive_power", cex.axis = cex, cex.lab = cex, type = "n"))
+        
+        # Drawing X axis with correct labels' text and size
+        with(dataset, axis(1, at = c(DateTime[1], DateTime[1440], DateTime[2880]), labels = c("Thu", "Fri", "Sat"), cex.axis = cex))
+        
+        # Plotting line on empty plot
+        with(dataset, lines(DateTime, Global_reactive_power))
+        
 # CLOSING PNG DEVICE
-#dev.off()
+dev.off()
