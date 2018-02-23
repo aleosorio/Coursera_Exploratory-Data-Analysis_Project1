@@ -22,12 +22,12 @@ setwd("C:/Users/lenovo/Documents/MAO/Aprendizaje/Data Science/Exploratory Data A
         dataset <- mutate(dataset, DateTime = paste(Date, Time, sep = " "))
         dataset$DateTime <- ymd_hms(dataset$DateTime)
 
-# SETTING UP GENERAL PARAMETERS
-par(oma = c(0, 8, 0, 8), mar = c(4,4,1,1), mfcol = c(2, 2))
-cex <- 0.5
-
 # OPENING PNG DEVICE TO CREATE "PLOT4.PNG" IN WORKING DIR
 png(filename = "plot4.png")
+        
+# SETTING UP GENERAL PARAMETERS
+par(oma = c(0, 4, 0, 4), mar = c(4,4,1,1), mfcol = c(2, 2))
+cex <- 0.5
 
 # GENERATING PLOT 1
         ## X axis set to "n" (empty X axis)
