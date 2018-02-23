@@ -13,7 +13,7 @@ dataset <- subset(household_power_consumption, Date == "1/2/2007" | Date == "2/2
 # SETTING UP MARGIN PARAMETERS
 par(mar = c(4,8,1,8))
 
-# OPEN PNG DEVICE TO CREATE "PLOT1.PNG" IN WORKING DIR
+# OPENING PNG DEVICE TO CREATE "PLOT1.PNG" IN WORKING DIR
 png(filename = "plot1.png")
 
 # GENERATING HISTOGRAM
@@ -21,5 +21,5 @@ png(filename = "plot1.png")
 ## Sets label text to 0.8 size
 hist(dataset$Global_active_power, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red", cex.axis = 0.8)
 
-# CLOSE PNG DEVICE
+# CLOSING PNG DEVICE
 dev.off()
