@@ -25,8 +25,8 @@ setwd("C:/Users/lenovo/Documents/MAO/Aprendizaje/Data Science/Exploratory Data A
 # SETTING UP MARGIN PARAMETERS
 par(mar = c(4,8,1,8))
 
-# OPENING PNG DEVICE TO CREATE "PLOT2.PNG" IN WORKING DIR
-#png(filename = "plot2.png")
+# OPENING PNG DEVICE TO CREATE "PLOT3.PNG" IN WORKING DIR
+png(filename = "plot3.png")
 
 # GENERATING PLOT
         ## X axis set to "n" (empty X axis)
@@ -44,7 +44,7 @@ par(mar = c(4,8,1,8))
         with(dataset, lines(DateTime, Sub_metering_3, col = "blue"))
         
         # Drawing legend
-        legend("topright", pch = "-", cex = 0.8, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+        legend("topright", lty = c(1, 1, 1), cex = 0.8, col = c("black", "red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 # CLOSING PNG DEVICE
-#dev.off()
+dev.off()
