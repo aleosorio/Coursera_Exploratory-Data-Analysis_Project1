@@ -26,8 +26,8 @@ setwd("C:/Users/lenovo/Documents/MAO/Aprendizaje/Data Science/Exploratory Data A
 png(filename = "plot4.png")
         
 # SETTING UP GENERAL PARAMETERS
-par(oma = c(5, 4,5, 4), mar = c(4,4,1,1), mfcol = c(2, 2))
-cex <- 0.5
+par(oma = c(0, 0, 0, 0), mar = c(4,4,2,1), mfcol = c(2, 2))
+cex <- 0.7
 
 # GENERATING PLOT 1
         ## X axis set to "n" (empty X axis)
